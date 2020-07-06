@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
-
+  <title>Siddhant</title>
   <script type="text/javascript" src="vue.js"></script>
   <script type="text/javascript" src="axios.js"></script>
 </head>
@@ -10,6 +9,27 @@
   <div id="app">
     <textarea v-model="src"></textarea>
     <h1> Siddhant Lohia </h1>
+    
+          <form action="/register" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" name="Name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" name="username">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password">
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button type="submit" class="btn btn-dark btn-block">Register</button>
+              </div>
+            </div>
+          </form>
+
   </div>
 
   <script type="text/javascript">
@@ -20,10 +40,11 @@
       },
       mounted(){
         var vm = this
-        axios.get('https://https://sidhant11.herokuapp.com/')
+        axios.get('https://https://sidhant11.herokuapp.com/api')
           .then(data => {
             vm.src = JSON.stringify(data.data)
             console.log(data)
+            <h1> Yes </h1>
           })
       }
     })
